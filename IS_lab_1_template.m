@@ -178,13 +178,16 @@ fprintf('testavimo paklaida: %f\n', eAts);
 
 %Bayes
 
-PBay=[x1Apm;x2Apm];
+PBay=[x1Apm;x2Apm]';
 Bayes=fitcnb(PBay,T);
 
-PBayAts=[x1Bay;x2Bay];
+PBayAts=[x1Bay;x2Bay]';
 
 BayesAts=predict(Bayes,PBayAts);
-
-fprintf('Bayes: ');
-fprintf(':%d', BayesAts);
+fprintf('\n\nBayes rezultatai:\n');
+fprintf('Turi būti: ');
+fprintf('%d ',T);
+fprintf('\n');
+fprintf('    Gavau: ');
+fprintf('%d ', BayesAts);
 fprintf('\n')
